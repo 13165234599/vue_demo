@@ -314,7 +314,7 @@ export default {
     //点击按钮添加新用户
     addUser() {
       this.$refs.addFormref.validate(async (valid) => {
-        // console.log(valid)
+        console.log(valid)
         if (!valid) return;
         //可以发起添加用户的网络请求
         const { data: res } = await this.$http.post("users", this.addForm);

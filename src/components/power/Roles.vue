@@ -139,6 +139,7 @@ export default {
   data() {
     return {
       rolesList: [],
+      //控制添加角色的框的显示与隐藏
       addDialogVisible: false,
       addForm: {
         roleName: "",
@@ -192,6 +193,7 @@ export default {
       defaultKeys:[],
       //即将分配权限的id
       roleId:'',
+     
     };
   },
   created() {
@@ -236,6 +238,7 @@ export default {
     async showEditDialog(id) {
       // console.log(id);
       const { data: res } = await this.$http.get("roles/" + id);
+      console.log(res,'hah');
       if (res.meta.status !== 200) {
         return this.$message.error("查询角色失败");
       }
@@ -381,7 +384,9 @@ export default {
       this.$message.success('分配权限成功')
       this.getRolesList()
       this.setRightDialogVisible = false
-    }
+    },
+    
+    
   },
 };
 </script>
