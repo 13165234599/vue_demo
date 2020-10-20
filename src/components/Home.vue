@@ -1,6 +1,7 @@
 <template>
   <el-container class="home-container">
     <!-- 头部区域 -->
+    <h1>头部标题</h1>
     <el-header>
       <div>
         <img src="../assets/heima.png" />
@@ -56,6 +57,7 @@ export default {
     }
   },
   created() {
+  console.log('created')
     this.getMenuList();
     this.activePath = window.sessionStorage.getItem('activePath')  
   },
